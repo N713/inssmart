@@ -1,0 +1,63 @@
+* {
+  @include reset();
+  box-sizing: border-box;
+}
+
+.body {
+  font-family: $mont;
+  color: $gray;
+  background-color: $lighterGray;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 24px;
+  line-height: 36px;
+}
+
+h2 {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+h3 {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.none {
+  display: none;
+}
+
+@media (min-width: $breakpoint) {
+  body {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  h1 {
+    font-size: 26px;
+    line-height: 39px;
+  }
+  
+  h2 {
+    font-size: 22px;
+    line-height: 33px;
+  }
+  
+  h3 {
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .none {
+    display: block;
+  }
+}

@@ -1,0 +1,284 @@
+.bikes {
+    @keyframes shake {
+        0% {
+            margin-left: -10px;
+        }
+        25% {
+            margin-left: 10px;
+        }
+        50% {
+            margin-left: -10px
+        }
+        75% {
+            margin-left: 10px;
+        }
+        100% {
+            margin-left: 0px;
+        }
+    }
+
+    &__bike {
+        margin-bottom: 20px;
+        overflow-x: hidden;
+        max-width: 846px;
+        z-index: 1;
+
+        header {
+            padding-bottom: 15px;
+            border-bottom: 1px solid $lighterGray;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: $black;
+        }
+
+        h2 {
+            font-weight: 500;
+            padding: 20px;
+            position: relative;
+            background-color: white;
+            border-radius: 20px 20px 0 0;
+            max-width: 100%;
+            color: $blue;
+
+            &::after {
+                content: "";
+                display: inline-block;
+                position: absolute;
+                right: 20px;
+                top: 32px;
+                width: 14px;
+                height: 7px;
+                background-image: url("../img/icon-arrow.svg");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                transition: all 0.2s;
+            }
+        }
+
+        h3,
+        p {
+            margin-bottom: 15px;
+        }
+
+        div {
+            margin-bottom: 30px;
+        }
+
+        div:last-of-type {
+            margin-bottom: 0;
+        }
+
+        ul,
+        ol {
+            padding-left: 15px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+
+            li {
+                margin-bottom: 15px;
+                width: 50%;
+                min-width: 260px;
+            }
+
+            li:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        ul {
+            li {
+                list-style: none;
+                position: relative;
+                padding-left: 10px;
+            }
+
+            li:before {
+                content: "";
+                display: inline-block;
+                position: absolute;
+                left: -15px;
+                top: 3px;
+                width: 16px;
+                height: 13px;
+                background-image: url("../img/icon-bike.svg");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+            }
+        }
+
+        img {
+            margin: 0 auto 20px;
+        }
+
+        input {
+            padding: 15px;
+            background: $white;
+            border: 1px solid $lighterGray;
+            border-radius: 16px;
+            margin-bottom: 15px;
+            color: $black;
+            transition: all 0.2s;
+
+            &:hover,
+            &:focus {
+                border: 1px solid $blue;
+            }
+        }
+
+        input.error {
+            border: 1px solid red;
+            animation: shake 0.2s linear 0s 2;
+        }
+
+        ::placeholder {
+            color: $lighterGray;
+        }
+    }
+
+    &__bike.closed {
+        z-index: 0;
+
+        h2 {
+            border-radius: 20px;
+            color: $black;
+
+            &::after {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__inner {
+        background-color: $white;
+        padding: 30px 20px;
+        border-radius: 0 0 20px 20px;
+    }
+
+    &__add {
+        div {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__buttons {
+        padding: 30px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        box-shadow: 0px 10px 40px rgba(12, 12, 12, 0.1);
+        border-radius: 20px;
+        margin-bottom: 0;
+
+        button {
+            margin-right: 20px;
+        }
+
+        button:last-of-type {
+            margin-right: 0;
+        }
+    }
+
+    &__tabs {
+        display: none;
+    }
+}
+
+@media (min-width: $breakpoint) {
+    .bikes {
+        &__add {
+            div {
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+            }
+        }
+
+        &__inner {
+            padding: 40px 60px;
+            border-radius: 0px 20px 20px 20px;
+        }
+
+        header {
+            padding-bottom: 25px;
+            display: flex;
+
+            picture {
+                min-width: 358px;
+                margin-right: 70px;
+            }
+
+            div,
+            picture {
+                position: relative;
+                left: -125px;
+            }
+
+            div {
+                min-width: 425px;
+            }
+        }
+
+        div {
+            margin-bottom: 40px;
+        }
+
+        input {
+            width: 100%;
+            max-width: 350px;
+            margin-right: 24px;
+            margin-bottom: 0;
+        }
+
+        .button {
+            width: 100%;
+            max-width: 130px;
+        }
+
+        h2 {
+            max-width: 290px;
+            text-align: center;
+
+            &::after {
+                display: none;
+            }
+        }
+
+        &__buttons {
+            .button {
+                max-width: 90px;
+            }
+        }
+
+        &__bike.closed {
+            h2 {
+                border-radius: 20px 20px 0 0;
+                background-color: $lightGray;
+            }
+        }
+    }
+}
+
+@media (min-width: $breakpoint-2) {
+    .bikes {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        &__bike {
+            margin-right: 40px;
+        }
+    }
+}

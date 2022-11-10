@@ -1,0 +1,46 @@
+.tabs {
+    position: relative;
+    color: $black;
+
+    &__desk {
+        display: none;
+    }
+}
+
+@media (min-width: $breakpoint) {
+    .tabs {
+        &__tab {
+            position: absolute;
+
+            h2 {
+                display: none;
+            }
+        }
+
+        &__desk {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            h2 {
+                display: inline-block;
+                font-weight: 500;
+                padding: 20px 24px;
+                border-radius: 20px 20px 0 0;
+                background-color: $lightGray;
+                cursor: pointer;
+            }
+
+            h2.active {
+                background-color: $white;
+                color: $blue;
+            }
+        }
+    }
+
+    .bikes {
+        .tabs__desk {
+            margin-bottom: 0;
+        }
+    }
+}
